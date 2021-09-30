@@ -7,3 +7,7 @@ pip3 install requests bs4 beautifulsoup4
 python3 get_covid.py
 
 10시 5분 ~ 10시 20분쯤부터 당일 0시기준 확진자를 확인하실 수 있습니다.
+
+21-09-30 20:38 이전에 다운로드 하신 분은 다시 다운로드해주세요.
+
+21-09-30: v0.1 출시
