@@ -2,7 +2,6 @@ import requests, re, json
 from bs4 import BeautifulSoup
 import time, random
 from datetime import timezone, timedelta, datetime
-import json
 
 n_search="https://search.naver.com/search.naver"
 n_msearch="https://m.search.naver.com"
