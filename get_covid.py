@@ -151,7 +151,7 @@ if(need_broadcast==1):
 	
 	tel_mes_pinit="\n신규 환자: %s명\n%s년 %s월 %s일 코로나19 감염 현황\n\n"%(format(int(hap_today_covid),',d'),year,month,day)
 	tel_mes="확진환자: %s명 (%s명 ▲)\n격리해제: %s명 (%s명 ▲)\n사망자: %s명 (%s명 ▲)\n\n"%(format(int(hap_covid),',d'), format(int(hap_today_covid),',d'),format(int(hap_clearCovid),',d'),format(int(tod_clear),',d'),format(int(hap_death),',d'),tod_death)
-	tel_mes2="국내발생 신규: %s명\n해외유입 신규: %s명\n(수도권: %s명, 비수도권: %s명)\n\n"%(format(int(local_hap),',d'), global_hap,hap1,hap2)
+	tel_mes2="국내발생 신규: %s명\n해외유입 신규: %s명\n(수도권: %s명, 비수도권: %s명)\n\n"%(format(int(local_hap),',d'),global_hap,format(int(hap1),',d'),format(int(hap2),',d'))
 	
 	
 	print(tel_mes_pinit+tel_mes+tel_mes2)
