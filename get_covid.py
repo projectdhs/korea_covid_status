@@ -143,7 +143,8 @@ while do_covid==1:
 
 
 if(need_broadcast==1):
-	mes="띵도오오옹!! 안녕하세요. 좋은 아침입니다. 새로운 소식이 도착하였습니다. %s년 %s월 %s일 0시 기준, 코로나 19 국내 확진자는 %s명 이고, 해외 확진자는 %s명으로, 전체 신규 확진자는 %s명입니다. 지역별로 나열해보면 수도권에서 %s명의 확진자가 발생하였고, 비수도권에서 %s명의 확진자가 발생하였습니다."%(year,month,day,local_hap,global_hap,hap_today_covid, str(hap1), str(hap2))
+	#mes는 tts용으로 제작해놓은 것입니다.
+	mes="안녕하세요. 좋은 아침입니다. 새로운 소식이 도착하였습니다. %s년 %s월 %s일 0시 기준, 코로나 19 국내 확진자는 %s명 이고, 해외 확진자는 %s명으로, 전체 신규 확진자는 %s명입니다. 지역별로 나열해보면 수도권에서 %s명의 확진자가 발생하였고, 비수도권에서 %s명의 확진자가 발생하였습니다."%(year,month,day,local_hap,global_hap,hap_today_covid, str(hap1), str(hap2))
 
 	need_broadcast=0
 	
