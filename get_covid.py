@@ -130,7 +130,7 @@ while do_covid==1:
 
 		if(location == gum_name):
 			hap3=int(increase)
-
+		local_chk=1
 		for mylocal in local_list1:
 			if(location==mylocal):
 				hap1+=int(increase)
