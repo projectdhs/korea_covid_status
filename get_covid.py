@@ -119,6 +119,9 @@ while do_covid==1:
 	for j in range(0, 18):
 		
 		increase = re.sub(pattern='[^0-9]', repl='', string=reg_todcount[j].text)
+		#21-10-19 코드 추가, 신규 확진자 0명일시 발생하는 문제 해결
+		if(increase == ''):
+			increase = 0
 		location = reg_name[j].text.strip()
 		
 
