@@ -143,15 +143,21 @@ while do_covid==1:
 
 
 if(need_broadcast==1):
-	#mes는 tts용으로 제작해놓은 것입니다.
-	mes="안녕하세요. 좋은 아침입니다. 새로운 소식이 도착하였습니다. %s년 %s월 %s일 0시 기준, 코로나 19 국내 확진자는 %s명 이고, 해외 확진자는 %s명으로, 전체 신규 확진자는 %s명입니다. 지역별로 나열해보면 수도권에서 %s명의 확진자가 발생하였고, 비수도권에서 %s명의 확진자가 발생하였습니다."%(year,month,day,local_hap,global_hap,hap_today_covid, str(hap1), str(hap2))
+#mes는 tts용으로 제작해놓은 것입니다.
+    mes="안녕하세요. 좋은 아침입니다. 새로운 소식이 도착하였습니다. %s년 %s월 %s일 0시 기준, 코로나 19 국내 확진자는 %s명 이고, 해외 확진자는 %s명으로, 전체 신규 확진자는 %s명입니다. 지역별로 나열해보면 수도권에서 %s명의 확진자가 발생하였고, 비수도권에서 %s명의 확진자가 발생하였습니다."%(year,month,day,local_hap,global_hap,hap_today_covid, str(hap1), str(hap2))
 
-	need_broadcast=0
+    need_broadcast=0
 	
-	
-	tel_mes_pinit="\n신규 환자: %s명\n%s년 %s월 %s일 코로나19 감염 현황\n\n"%(format(int(hap_today_covid),',d'),year,month,day)
-	tel_mes="확진환자: %s명 (%s명 ▲)\n격리해제: %s명 (%s명 ▲)\n사망자: %s명 (%s명 ▲)\n\n"%(format(int(hap_covid),',d'), format(int(hap_today_covid),',d'),format(int(hap_clearCovid),',d'),format(int(tod_clear),',d'),format(int(hap_death),',d'),tod_death)
-	tel_mes2="국내발생 신규: %s명\n해외유입 신규: %s명\n(수도권: %s명, 비수도권: %s명)\n\n"%(format(int(local_hap),',d'),global_hap,format(int(hap1),',d'),format(int(hap2),',d'))
-	
-	
-	print(tel_mes_pinit+tel_mes+tel_mes2)
+    tel_mes = ""
+    tel_mes_pinit="\n신규 환자: %s명\n%s년 %s월 %s일 코로나19 감염 현황\n\n"%(format(int(hap_today_covid),',d'),year,month,day)
+    if(is_checked[0] == True):
+        tel_mes += "확진환자: %s명 (%s명 ▲)\n"%(format(int(hap_covid),',d'), format(int(hap_today_covid),',d'))
+    if(is_checked[1] == True):
+        tel_mes += "격리해제: %s명 (%s명 ▲)\n"%(format(int(hap_clearCovid),',d'),format(int(tod_clear),',d'))
+    if(is_checked[2] == True):
+        tel_mes += "사망자: %s명 (%s명 ▲)\n"%(format(int(hap_death),',d'),tod_death)
+
+    tel_mes2="\n국내발생 신규: %s명\n해외유입 신규: %s명\n(수도권: %s명, 비수도권: %s명)\n\n"%(format(int(local_hap),',d'),global_hap,format(int(hap1),',d'),format(int(hap2),',d'))
+
+
+    print(tel_mes_pinit+tel_mes+tel_mes2)
