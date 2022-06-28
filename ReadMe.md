@@ -15,4 +15,4 @@ http://ncov.mohw.go.kr/ 에 데이터가 올라와있어야 합니다.
 21-09-30: v0.1 출시
 22-06-28: 네이버 크롤링 => 질병관리청 코로나 사이트에서 크롤링해오는 방식으로 변경
 
-![initial]([https://user-images.githubusercontent.com/blahblah~~/.PNG](https://raw.githubusercontent.com/projectdhs/korea_covid_status/main/run_image.png))
+![initial](https://raw.githubusercontent.com/projectdhs/korea_covid_status/main/run_image.png)
