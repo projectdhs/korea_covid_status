@@ -33,7 +33,7 @@ covid_date = tree.xpath('//*[@id="content"]/div/div[2]/p/span/text()')[0]
 if(covid_date.split(' ')[1] == month + '.' + day + '.'):
     print("코로나 정보를 가져오는 중입니다.\n")
 else:
-    print("틀림")
+    print("오늘자 데이터가 없습니다.")
     exit()
 
 hap_today_covid = tree.xpath('//*[@id="content"]/div/div[5]/table/tbody/tr[1]/td[1]/text()')[0]
