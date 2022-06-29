@@ -23,7 +23,8 @@ today=str(year)+str(month)+str(day)
 http_header = {"referer" : "http://ncov.mohw.go.kr/bdBoardList.do?brdId=1&brdGubun=13",
                "accept" : "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
                "accept-encoding" : "gzip, deflate",
-               "accept-language" : "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7"}
+               "accept-language" : "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
+               "user-agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"}
 
 page = requests.get('http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun=', headers=http_header)
 page.encoding = 'utf-8'
@@ -33,7 +34,7 @@ covid_date = tree.xpath('//*[@id="content"]/div/div[2]/p/span/text()')[0]
 if(covid_date.split(' ')[1] == month + '.' + day + '.'):
     print("코로나 정보를 가져오는 중입니다.\n")
 else:
-    print("오늘자 데이터가 없습니다.")
+    print("틀림")
     exit()
 
 hap_today_covid = tree.xpath('//*[@id="content"]/div/div[5]/table/tbody/tr[1]/td[1]/text()')[0]
